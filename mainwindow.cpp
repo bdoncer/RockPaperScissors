@@ -7,21 +7,24 @@ MainWindow::MainWindow(QWidget *parent) :
         QWidget(parent)
 {
 
-    button_ = new QPushButton(tr("Ready"));
-    button2_ = new QPushButton(tr("Instruction"));
-    button3_ = new QPushButton(tr("Reset score"));
+    button = new QPushButton(tr("Ready"));
+    button2 = new QPushButton(tr("Instruction"));
+    button3 = new QPushButton(tr("Reset score"));
+
     score1 = new QLabel("0");
     score2 = new QLabel("0");
     dots = new QLabel(":");
-    mainLayout->addWidget(button_,0,0);
-    mainLayout->addWidget(button2_,0,4);
-    mainLayout->addWidget(button3_,0,2);
+
+    mainLayout->addWidget(button,0,0);
+    mainLayout->addWidget(button2,0,4);
+    mainLayout->addWidget(button3,0,2);
     mainLayout->addWidget(score1,0,8);
     mainLayout->addWidget(dots,0,9);
     mainLayout->addWidget(score2,0,10);
-    connect(button_, SIGNAL(clicked()), this, SLOT(readyButtonClicked()));
-    connect(button2_, SIGNAL(clicked()), this, SLOT(instructionButtonClicked()));
-    connect(button3_, SIGNAL(clicked()), this, SLOT(resetButtonClicked()));
+
+    connect(button, SIGNAL(clicked()), this, SLOT(readyButtonClicked()));
+    connect(button2, SIGNAL(clicked()), this, SLOT(instructionButtonClicked()));
+    connect(button3, SIGNAL(clicked()), this, SLOT(resetButtonClicked()));
 
     imgDisplayLabel = new QLabel("");
     imgDisplayLabel2 = new QLabel("");
@@ -40,8 +43,17 @@ MainWindow::MainWindow(QWidget *parent) :
 
 MainWindow::~MainWindow()
 {
-    delete button_;
-    delete textBrowser_;
+    delete button;
+    delete button2;
+    delete button3;
+    delete score1;
+    delete score2;
+    delete dots;
+    delete inputImg;
+    delete imgDisplayLabel;
+    delete inputImg2;
+    delete imgDisplayLabel2;
+    delete mainLayout;
 }
 
 int MainWindow::countResult() const {
@@ -82,7 +94,6 @@ int MainWindow::countResult() const {
 
 void MainWindow::keyPressEvent(QKeyEvent *event)
 {
-
 
     if(event->key() == Qt::Key_A)
     {
@@ -168,10 +179,11 @@ void MainWindow::readyButtonClicked() {
 void MainWindow::resetButtonClicked() {
     score1->setText("0");
     score2->setText("0");
+    points1 = 0;
+    points2 = 0;
 }
 
 void MainWindow::instructionButtonClicked() {
     instruction.show();
-
 }
 

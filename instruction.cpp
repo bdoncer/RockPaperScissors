@@ -16,4 +16,10 @@ Instruction::Instruction(QWidget *parent) :
     setLayout(mainLayout);
 }
 
+Instruction::~Instruction() {
+    delete imgDisplayLabel;
+    delete inputImg;
+    delete mainLayout;
+}
+
 

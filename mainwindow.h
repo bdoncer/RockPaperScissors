@@ -29,21 +29,18 @@ public:
     ~MainWindow();
 
 private:
-    QPushButton* button_;
-    QPushButton* button2_;
-    QPushButton* button3_;
+    QPushButton* button;
+    QPushButton* button2;
+    QPushButton* button3;
     QLabel *score1;
     QLabel *score2;
     QLabel *dots;
     QIcon icon;
     QSize size;
-    QTextBrowser* textBrowser_;
     QImage* inputImg;
     QLabel* imgDisplayLabel;
-    QScrollArea* scrollArea;
     QImage* inputImg2;
     QLabel* imgDisplayLabel2;
-    QScrollArea* scrollArea2;
     QGridLayout *mainLayout = new QGridLayout;
     int s1 = 0;
     int s2 = 0;

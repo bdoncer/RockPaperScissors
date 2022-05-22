@@ -18,6 +18,7 @@ Q_OBJECT
 
 public:
     explicit Instruction(QWidget *parent = 0);
+    ~Instruction();
 
 
 private:

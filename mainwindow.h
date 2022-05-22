@@ -12,6 +12,7 @@
 #include <QLabel>
 #include <QImage>
 #include <QWidget>
+#include "instruction.h"
 
 class QPushButton;
 class QTextBrowser;
@@ -52,6 +53,7 @@ private:
     int r2 = 0;
     int points1 = 0;
     int points2 = 0;
+    Instruction instruction;
 
 private slots:
     void readyButtonClicked();

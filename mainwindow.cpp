@@ -14,8 +14,8 @@ MainWindow::MainWindow(QWidget *parent) :
     score2 = new QLabel("0");
     dots = new QLabel(":");
     mainLayout->addWidget(button_,0,0);
-    mainLayout->addWidget(button2_,0,2);
-    mainLayout->addWidget(button3_,0,4);
+    mainLayout->addWidget(button2_,0,4);
+    mainLayout->addWidget(button3_,0,2);
     mainLayout->addWidget(score1,0,8);
     mainLayout->addWidget(dots,0,9);
     mainLayout->addWidget(score2,0,10);
@@ -25,7 +25,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     imgDisplayLabel = new QLabel("");
     imgDisplayLabel2 = new QLabel("");
-    inputImg = new QImage("doggo1.jpg");
+    inputImg = new QImage("resources/doggo1.jpg");
     icon.addPixmap(QPixmap::fromImage(*inputImg), QIcon::Normal, QIcon::On);
     size = QSize(200,200);
     QPixmap pixmap = icon.pixmap(size, QIcon::Normal, QIcon::On);
@@ -86,7 +86,7 @@ void MainWindow::keyPressEvent(QKeyEvent *event)
 
     if(event->key() == Qt::Key_A)
     {
-        inputImg = new QImage("paper.png");
+        inputImg = new QImage("resources/paper.png");
         p1 = 1;
         s1 = 0;
         r1 = 0;
@@ -94,7 +94,7 @@ void MainWindow::keyPressEvent(QKeyEvent *event)
 
     if(event->key() == Qt::Key_S)
     {
-        inputImg = new QImage("rock.png");
+        inputImg = new QImage("resources/rock.png");
         r1 = 1;
         s1 = 0;
         p1 = 0;
@@ -102,7 +102,7 @@ void MainWindow::keyPressEvent(QKeyEvent *event)
 
     if(event->key() == Qt::Key_D)
     {
-        inputImg = new QImage("scissors.png");
+        inputImg = new QImage("resources/scissors.png");
         s1 = 1;
         p1 = 0;
         r1 = 0;
@@ -113,7 +113,7 @@ void MainWindow::keyPressEvent(QKeyEvent *event)
 
     if(event->key() == Qt::Key_J)
     {
-        inputImg2 = new QImage("paper.png");
+        inputImg2 = new QImage("resources/paper.png");
         p2 = 1;
         s2 = 0;
         r2 = 0;
@@ -121,7 +121,7 @@ void MainWindow::keyPressEvent(QKeyEvent *event)
 
     if(event->key() == Qt::Key_K)
     {
-        inputImg2 = new QImage("rock.png");
+        inputImg2 = new QImage("resources/rock.png");
         r2 = 1;
         s2 = 0;
         p2 = 0;
@@ -129,7 +129,7 @@ void MainWindow::keyPressEvent(QKeyEvent *event)
 
     if(event->key() == Qt::Key_L)
     {
-        inputImg2 = new QImage("scissors.png");
+        inputImg2 = new QImage("resources/scissors.png");
         s2 = 1;
         p2 = 0;
         r2 = 0;
@@ -171,9 +171,7 @@ void MainWindow::resetButtonClicked() {
 }
 
 void MainWindow::instructionButtonClicked() {
-//    Instruction instruction;
-//    instruction.setModal(true);
-//    Instruction.exec();
+    instruction.show();
 
 }
 
